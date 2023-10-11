@@ -2,11 +2,9 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 
-const { register } = require("../controllers/user");
+const { register, activateAccount } = require("../controllers/user");
 
-router.get("/register", (req, res) => {
-  res.send("register");
-});
 router.post("/register", register);
+router.post("/activate", activateAccount);
 
 module.exports = router;
