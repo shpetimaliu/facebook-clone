@@ -1,14 +1,10 @@
 import { ErrorMessage, useField } from "formik";
 import React from "react";
-import { useMediaQuery } from "react-responsive";
 import "./index.css";
 
 function LoginInput({ placeholder, bottom, ...props }) {
   const [field, meta] = useField(props);
-  const desktopView = useMediaQuery({
-    query: "(max-width: 850px)",
-  });
-  console.log(desktopView);
+
   return (
     <div className="input_wrap">
       {meta.touched && meta.error && !bottom && (
