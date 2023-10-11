@@ -7,6 +7,7 @@ const bcrypt = require("bcrypt");
 
 const User = require("../models/User");
 const { generateToken } = require("../helpers/Tokens");
+const { sendVerificationEmail } = require("../helpers/Mailer");
 exports.register = async (req, res) => {
   try {
     const {
@@ -69,7 +70,8 @@ exports.register = async (req, res) => {
       { id: user._id.toString() },
       "30m"
     );
-    console.log(emailVerificationToken);
+    const url = `${process.env.BASE_URL}/activate/${emailVerificationToken}`;
+    sendVerificationEmail(user.email, user.emri, url);
 
     res.json(user);
   } catch (error) {
