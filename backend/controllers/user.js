@@ -117,6 +117,24 @@ exports.login = async (req, res) => {
     if (!user) {
       return res.status(400).json({ message: "This email not existing" });
     }
+    const check = await bcrypt.compare(password, user.password);
+    if (!check) {
+      return res
+        .status(400)
+        .json({ message: "Invalid credentials, please try again" });
+    }
+    const token = generateToken({ id: user._id.toString() }, "7d");
+
+    res.send({
+      id: user._id,
+      username: user.username,
+      profili: user.profili,
+      emri: user.emri,
+      mbiemri: user.mbiemri,
+      token: token,
+      verified: user.verified,
+      message: "Register Success | Please activate your email to start",
+    });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
