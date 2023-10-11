@@ -1,10 +1,32 @@
 import { Form, Formik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import * as Yup from "yup";
 import LoginInput from "../../components/inputs/loginInput";
 import "./Login.css";
 
+const loginInfos = {
+  email: "",
+  password: "",
+};
+
 function Login() {
+  const [login, setLogin] = useState(loginInfos);
+  const { email, password } = login;
+  console.log(login);
+  const handleLoginChange = (e) => {
+    const { name, value } = e.target;
+    setLogin({ ...login, [name]: value });
+  };
+
+  const loginValidation = Yup.object({
+    email: Yup.string()
+      .required("Email or phone number is required")
+      .email("Must be a valid email")
+      .max(100),
+    password: Yup.string().required("Password is required"),
+  });
+
   return (
     <div className="login">
       <div className="login_wrapper">
@@ -17,18 +39,28 @@ function Login() {
           </div>
           <div className="login_2">
             <div className="login_2_wrap">
-              <Formik>
+              <Formik
+                enableReinitialize
+                initialValues={{
+                  email,
+                  password,
+                }}
+                validationSchema={loginValidation}
+              >
                 {(formik) => (
                   <Form>
                     <LoginInput
                       type="text"
                       name="email"
                       placeholder="Email or phone number"
+                      onChange={handleLoginChange}
                     />
                     <LoginInput
                       type="password"
                       name="password"
                       placeholder="Password"
+                      onChange={handleLoginChange}
+                      bottom
                     />
                     <button type="submit" className="blue_btn">
                       Log in
@@ -40,7 +72,7 @@ function Login() {
                 Forgot password?
               </Link>
               <div className="sign_splitter"></div>
-              <button className="blue_btn open_signup">Create Account</button>
+              <button className="green_btn open_signup">Create Account</button>
             </div>
             <Link to="/" className="sign_extra">
               <b>Create a Page </b>
