@@ -2,6 +2,8 @@ import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import * as Yup from "yup";
 import RegisterInput from "../inputs/registerInput/registerInput";
+import DateOfBirthSelect from "./DateOfBirthSelect";
+import GenderSelect from "./GenderSelect";
 
 function RegisterForm() {
   const userInfos = {
@@ -61,6 +63,9 @@ function RegisterForm() {
       .max(50, "Password can't be more than 50 characters."),
   });
 
+  const [dateError, setDateError] = useState("");
+  const [genderError, setGenderError] = useState("");
+
   return (
     <div className="blur">
       <div className="register">
@@ -89,7 +94,21 @@ function RegisterForm() {
               ditlindjaMuaji,
               ditlindjaDita
             );
-            console.log(picked_date);
+            let atLeast14 = new Date(1970 + 14, 0, 1);
+            let noMoreThan70 = new Date(1970 + 70, 0, 1);
+            if (current_date - picked_date < atLeast14) {
+              setDateError(
+                "It look like you've enetered the wrong info. Please make sure that you use real date of birth."
+              );
+            } else if (current_date - picked_date > noMoreThan70) {
+              setDateError(
+                "It look like you've enetered the wrong info. Please make sure that you use real date of birth."
+              );
+            } else if (gender === "") {
+              setGenderError(
+                "Please choose a gender. You can change who can see this leter."
+              );
+            }
           }}
         >
           {(formik) => (
@@ -128,78 +147,22 @@ function RegisterForm() {
                 <div className="reg_line_header">
                   Date of birth <i className="info_icon"></i>
                 </div>
-                <div className="reg_grid">
-                  <select
-                    name="ditlindjaDita"
-                    value={ditlindjaDita}
-                    onChange={handleRegisterChange}
-                  >
-                    {dita.map((dit, i) => (
-                      <option value={dit} key={i}>
-                        {dit}
-                      </option>
-                    ))}
-                  </select>
-                  <select
-                    name="ditlindjaMuaji"
-                    value={ditlindjaMuaji}
-                    onChange={handleRegisterChange}
-                  >
-                    {muaji.map((muaj, i) => (
-                      <option value={muaj} key={i}>
-                        {muaj}
-                      </option>
-                    ))}
-                  </select>
-                  <select
-                    name="ditlindjaViti"
-                    value={ditlindjaViti}
-                    onChange={handleRegisterChange}
-                  >
-                    {viti.map((year, i) => (
-                      <option value={year} key={i}>
-                        {year}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+                <DateOfBirthSelect
+                  ditlindjaDita={ditlindjaDita}
+                  ditlindjaMuaji={ditlindjaMuaji}
+                  ditlindjaViti={ditlindjaViti}
+                  dita={dita}
+                  muaji={muaji}
+                  viti={viti}
+                  handleRegisterChange={handleRegisterChange}
+                  dateError={dateError}
+                />
               </div>
               <div className="reg_col">
                 <div className="reg_line_header">
                   Gender <i className="info_icon"></i>
                 </div>
-                <div className="reg_grid">
-                  <label htmlFor="male">
-                    Male
-                    <input
-                      type="radio"
-                      name="gender"
-                      id="male"
-                      value="male"
-                      onChange={handleRegisterChange}
-                    />
-                  </label>
-                  <label htmlFor="female">
-                    Female
-                    <input
-                      type="radio"
-                      name="gender"
-                      id="female"
-                      value="female"
-                      onChange={handleRegisterChange}
-                    />
-                  </label>
-                  <label htmlFor="other">
-                    Other
-                    <input
-                      type="radio"
-                      name="gender"
-                      id="other"
-                      value="other"
-                      onChange={handleRegisterChange}
-                    />
-                  </label>
-                </div>
+                <GenderSelect handleRegisterChange={handleRegisterChange} />
               </div>
               <div className="reg_infos">
                 By clicking Sign up, you agree to our{" "}
