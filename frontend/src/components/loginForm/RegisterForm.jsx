@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import ScaleLoader from "react-spinners/ScaleLoader";
@@ -69,11 +70,30 @@ function RegisterForm() {
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  const registerSubmit = () => {
+  const registerSubmit = async () => {
     try {
-    } catch (error) {}
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/register`,
+        {
+          emri,
+          mbiemri,
+          email,
+          password,
+          ditlindjaViti,
+          ditlindjaMuaji,
+          ditlindjaDita,
+          gender,
+        }
+      );
+      setError("");
+      setSuccess(data.message);
+    } catch (error) {
+      setLoading(false);
+      setSuccess("");
+      setError(error.response.data.message);
+    }
   };
 
   return (
