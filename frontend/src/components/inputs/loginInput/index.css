@@ -65,5 +65,14 @@
   position: absolute;
   width: 300px;
   left: -19.5rem;
-  top: 0;
+  top: -3px;
+}
+
+.input_arrow_left {
+  border-left: 10px solid var(--error-inp);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  right: -10px;
+  top: 13px;
 }

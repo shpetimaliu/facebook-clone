@@ -1,5 +1,6 @@
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
+import * as Yup from "yup";
 import RegisterInput from "../inputs/registerInput/registerInput";
 
 function RegisterForm() {
@@ -36,9 +37,30 @@ function RegisterForm() {
   const NxjerrDiten = () => {
     return new Date(ditlindjaViti, ditlindjaMuaji, 0).getDate();
   };
-
   const dita = Array.from(new Array(NxjerrDiten()), (val, index) => index + 1);
-  console.log(user);
+
+  const registerValidation = Yup.object({
+    emri: Yup.string()
+      .matches(/^[A-Za-z]+$/, "First name can only contain letters")
+      .required("First name is required")
+      .min(2, "First name must be between 2 and 20 characters")
+      .max(20, "First name must be between 2 and 20 characters"),
+    mbiemri: Yup.string()
+      .matches(/^[A-Za-z]+$/, "Surname can only contain letters")
+      .required("Surname is required")
+      .min(2, "Surname must be between 2 and 20 characters")
+      .max(20, "Surname must be between 2 and 20 characters"),
+    email: Yup.string()
+      .required("Email is a required")
+      .email("Enter a valid email"),
+    password: Yup.string()
+      .required(
+        "Enter a combination of at least eight number, letters and punctuation marks(Such as ! and &)"
+      )
+      .min(8, "Password must be at least 8 characters.")
+      .max(50, "Password can't be more than 50 characters."),
+  });
+
   return (
     <div className="blur">
       <div className="register">
@@ -47,7 +69,20 @@ function RegisterForm() {
           <span>Sign Up</span>
           <span>It's quick and easy</span>
         </div>
-        <Formik>
+        <Formik
+          enableReinitialize
+          initialValues={{
+            emri,
+            mbiemri,
+            email,
+            password,
+            ditlindjaViti,
+            ditlindjaMuaji,
+            ditlindjaDita,
+            gender,
+          }}
+          validationSchema={registerValidation}
+        >
           {(formik) => (
             <Form className="register_form">
               <div className="reg_line">
