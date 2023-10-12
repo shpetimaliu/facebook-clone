@@ -1,5 +1,6 @@
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
+import ScaleLoader from "react-spinners/ScaleLoader";
 import * as Yup from "yup";
 import RegisterInput from "../inputs/registerInput/registerInput";
 import DateOfBirthSelect from "./DateOfBirthSelect";
@@ -66,6 +67,15 @@ function RegisterForm() {
   const [dateError, setDateError] = useState("");
   const [genderError, setGenderError] = useState("");
 
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  const registerSubmit = () => {
+    try {
+    } catch (error) {}
+  };
+
   return (
     <div className="blur">
       <div className="register">
@@ -111,6 +121,7 @@ function RegisterForm() {
             } else {
               setDateError("");
               setGenderError("");
+              registerSubmit();
             }
           }}
         >
@@ -177,8 +188,11 @@ function RegisterForm() {
                 notifications from us and can opt out at any time.
               </div>
               <div className="reg_btn_wrapper">
-                <button className="green_btn open_signup">Sign Up</button>
+                <button className="green_btn open_signup">Sign Up </button>
               </div>
+              <ScaleLoader color="#7A7D82" loading={loading} size={50} />
+              {error && <div className="error_text">{error}</div>}
+              {success && <div className="success_text">{success}</div>}
             </Form>
           )}
         </Formik>

@@ -258,8 +258,18 @@
 }
 /* Footer */
 
-/* dob and gender Errors */
+/*  Message */
+.error_text {
+  color: var(--error-inp);
+}
 
+.success_text {
+  color: var(--green-color);
+}
+
+/*  Message */
+
+/* dob and gender Errors */
 .reg_grid .input_error {
   width: 300px;
   position: absolute;
