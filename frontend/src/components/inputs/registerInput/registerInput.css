@@ -84,6 +84,13 @@
   transform: translateY(1px);
 }
 
+.error_arrow_right {
+  border-right: 10px solid var(--error-inp);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+}
+
 @media (min-width: 539px) {
   .register_input_wrap .input_error {
     max-width: 100%;

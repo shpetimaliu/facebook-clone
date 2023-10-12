@@ -82,6 +82,15 @@ function RegisterForm() {
             gender,
           }}
           validationSchema={registerValidation}
+          onSubmit={() => {
+            let current_date = new Date();
+            let picked_date = new Date(
+              ditlindjaViti,
+              ditlindjaMuaji,
+              ditlindjaDita
+            );
+            console.log(picked_date);
+          }}
         >
           {(formik) => (
             <Form className="register_form">

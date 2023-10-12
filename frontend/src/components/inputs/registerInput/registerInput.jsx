@@ -18,8 +18,8 @@ function RegisterInput({ placeholder, bottom, ...props }) {
     query: "(min-width: 1170px)",
   });
 
-  const test1 = view3 && field.name === 'emri'
-  const test2 = view3 && field.name === 'mbiemri'
+  const test1 = view3 && field.name === "emri";
+  const test2 = view3 && field.name === "mbiemri";
 
   return (
     <div className="input_wrap register_input_wrap">
@@ -44,12 +44,21 @@ function RegisterInput({ placeholder, bottom, ...props }) {
       {meta.touched && meta.error && (
         <div
           className={view3 ? "input_error input_error_desktop" : "input_error"}
-          style={{ transform: "translateY(2px)", left: `${}` }}
+          style={{
+            transform: "translateY(2px)",
+            left: `${test1 ? "-107%" : test2 ? "107%" : ""}`,
+          }}
         >
           {meta.touched && meta.error && <ErrorMessage name={field.name} />}
           {meta.touched && meta.error && (
             <div
-              className={view3 ? "error_arrow_left" : "error_arrow_bottom"}
+              className={
+                view3 && field.name !== "emri"
+                  ? "error_arrow_left"
+                  : view3 && field.name !== "emri"
+                  ? "error_arrow_right"
+                  : !view3 && "error_arrow_bottom"
+              }
             ></div>
           )}
         </div>
