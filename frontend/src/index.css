@@ -59,7 +59,7 @@ a {
   border: none;
   outline: none;
   background: var(--green-color);
-  padding: 0.5px 12px;
+  padding: 15.5px 31px;
   border-radius: 7px;
   font-family: inherit;
   font-weight: 600;
@@ -72,3 +72,13 @@ a {
   cursor: pointer;
 }
 /* Butonat */
+
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.76);
+  z-index: 999;
+}

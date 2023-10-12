@@ -55,7 +55,14 @@ function Footer() {
         <Link to="/">Contact Uploading & Non-UsersSettingsActivity log</Link>
       </div>
       <div className="login_footer_wrap">
-        <Link to="/" style={{ fontSize: "12px", marginTop: "10px" }}>
+        <Link
+          to="/"
+          style={{
+            fontSize: "12px",
+            marginTop: "10px",
+            textDecoration: "none",
+          }}
+        >
           Meta Clone © 2023
         </Link>
       </div>
