@@ -53,9 +53,9 @@ function RegisterInput({ placeholder, bottom, ...props }) {
           {meta.touched && meta.error && (
             <div
               className={
-                view3 && field.name !== "emri"
+                view3 && field.name !== "mbiemri"
                   ? "error_arrow_left"
-                  : view3 && field.name !== "emri"
+                  : view3 && field.name !== "mbiemri"
                   ? "error_arrow_right"
                   : !view3 && "error_arrow_bottom"
               }
@@ -64,9 +64,7 @@ function RegisterInput({ placeholder, bottom, ...props }) {
         </div>
       )}
 
-      {meta.touched && meta.error && (
-        <i className="error_icon" style={{ top: `${!bottom && "25%"}` }}></i>
-      )}
+      {meta.touched && meta.error && <i className="error_icon"></i>}
     </div>
   );
 }

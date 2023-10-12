@@ -108,6 +108,9 @@ function RegisterForm() {
               setGenderError(
                 "Please choose a gender. You can change who can see this leter."
               );
+            } else {
+              setDateError("");
+              setGenderError("");
             }
           }}
         >
@@ -162,7 +165,10 @@ function RegisterForm() {
                 <div className="reg_line_header">
                   Gender <i className="info_icon"></i>
                 </div>
-                <GenderSelect handleRegisterChange={handleRegisterChange} />
+                <GenderSelect
+                  handleRegisterChange={handleRegisterChange}
+                  genderError={genderError}
+                />
               </div>
               <div className="reg_infos">
                 By clicking Sign up, you agree to our{" "}

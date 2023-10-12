@@ -45,6 +45,15 @@
   margin-bottom: 15px;
 }
 
+.error_arrow_left {
+  border-left: 10px solid var(--error-inp);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  right: -10px;
+  top: 13px;
+}
+
 .error_arrow_top {
   border-top: 10px solid var(--error-inp);
   border-right: 10px solid transparent;
