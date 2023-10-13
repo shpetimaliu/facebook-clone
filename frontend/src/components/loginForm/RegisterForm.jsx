@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
+import useDispatch from "react-redux";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import * as Yup from "yup";
 import RegisterInput from "../inputs/registerInput/registerInput";
@@ -71,6 +72,7 @@ function RegisterForm() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
 
   const registerSubmit = async () => {
     try {
@@ -89,6 +91,10 @@ function RegisterForm() {
       );
       setError("");
       setSuccess(data.message);
+      const { message, ...rest } = data;
+      setTimeout(() => {
+        dispatch({ type: "LOGIN", payload: rest });
+      }, 2000);
     } catch (error) {
       setLoading(false);
       setSuccess("");
