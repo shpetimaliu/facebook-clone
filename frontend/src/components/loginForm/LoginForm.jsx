@@ -99,7 +99,6 @@ function LoginForm({ setVisible }) {
             <Link to="/forget" className="forget_password">
               Forgot password?
             </Link>
-
             {error && <div className="error_text">{error}</div>}
             <div className="sign_splitter"></div>
             <button className="green_btn open_signup" onClick={setVisible}>

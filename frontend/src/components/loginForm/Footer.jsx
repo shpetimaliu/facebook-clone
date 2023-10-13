@@ -52,7 +52,7 @@ function Footer() {
         </Link>
         <Link to="/">Terms</Link>
         <Link to="/">Help</Link>
-        <Link to="/">Contact Uploading & Non-UsersSettingsActivity log</Link>
+        <Link to="/">Contact Uploading & Non-Users</Link>
       </div>
       <div className="login_footer_wrap">
         <Link
