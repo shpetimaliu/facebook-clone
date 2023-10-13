@@ -10,7 +10,7 @@ import RegisterInput from "../inputs/registerInput/registerInput";
 import DateOfBirthSelect from "./DateOfBirthSelect";
 import GenderSelect from "./GenderSelect";
 
-function RegisterForm() {
+function RegisterForm({ setVisible }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -112,7 +112,7 @@ function RegisterForm() {
     <div className="blur">
       <div className="register">
         <div className="register_header">
-          <i className="exit_icon"></i>
+          <i className="exit_icon" onClick={() => setVisible(false)}></i>
           <span>Sign Up</span>
           <span>It's quick and easy</span>
         </div>

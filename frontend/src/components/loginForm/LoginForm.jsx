@@ -1,6 +1,7 @@
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import LoginInput from "../../components/inputs/loginInput";
 import "../../pages/login/Login.css";
@@ -10,7 +11,9 @@ const loginInfos = {
   password: "",
 };
 
-function LoginForm() {
+function LoginForm({ setVisible }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [login, setLogin] = useState(loginInfos);
   const { email, password } = login;
   console.log(login);
@@ -70,7 +73,9 @@ function LoginForm() {
               Forgot password?
             </Link>
             <div className="sign_splitter"></div>
-            <button className="green_btn open_signup">Create Account</button>
+            <button className="green_btn open_signup" onClick={setVisible}>
+              Create Account
+            </button>
           </div>
           <Link to="/" className="sign_extra">
             <b>Create a Page </b>
