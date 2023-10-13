@@ -1,4 +1,6 @@
+import axios from "axios";
 import { Form, Formik } from "formik";
+import Cookies from "js-cookie";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -29,6 +31,28 @@ function LoginForm({ setVisible }) {
       .max(100),
     password: Yup.string().required("Password is required"),
   });
+
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const loginSubmit = async () => {
+    try {
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/login`,
+        {
+          email,
+          password,
+        }
+      );
+      dispatch({ type: "LOGIN", payload: data });
+      Cookies.set("user", JSON.stringify(data));
+      navigate("/");
+    } catch (error) {
+      setLoading(false);
+      setError(error.response.data.message);
+    }
+  };
   return (
     <div>
       <div className="login_wrap">
@@ -47,6 +71,9 @@ function LoginForm({ setVisible }) {
                 password,
               }}
               validationSchema={loginValidation}
+              onSubmit={() => {
+                loginSubmit();
+              }}
             >
               {(formik) => (
                 <Form>
@@ -72,6 +99,7 @@ function LoginForm({ setVisible }) {
             <Link to="/forget" className="forget_password">
               Forgot password?
             </Link>
+            {error && <div className="error_text">{error}</div>}
             <div className="sign_splitter"></div>
             <button className="green_btn open_signup" onClick={setVisible}>
               Create Account
