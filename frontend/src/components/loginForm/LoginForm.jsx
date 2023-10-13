@@ -33,11 +33,11 @@ function LoginForm({ setVisible }) {
   });
 
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
 
   const loginSubmit = async () => {
     try {
+      setLoading(true);
       const { data } = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/login`,
         {
@@ -99,6 +99,7 @@ function LoginForm({ setVisible }) {
             <Link to="/forget" className="forget_password">
               Forgot password?
             </Link>
+
             {error && <div className="error_text">{error}</div>}
             <div className="sign_splitter"></div>
             <button className="green_btn open_signup" onClick={setVisible}>
