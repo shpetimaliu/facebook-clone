@@ -1,7 +1,9 @@
 import axios from "axios";
 import { Form, Formik } from "formik";
+import Cookies from "js-cookie";
 import React, { useState } from "react";
-import useDispatch from "react-redux";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import * as Yup from "yup";
 import RegisterInput from "../inputs/registerInput/registerInput";
@@ -9,6 +11,9 @@ import DateOfBirthSelect from "./DateOfBirthSelect";
 import GenderSelect from "./GenderSelect";
 
 function RegisterForm() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const userInfos = {
     emri: "",
     mbiemri: "",
@@ -72,7 +77,6 @@ function RegisterForm() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
-  const dispatch = useDispatch();
 
   const registerSubmit = async () => {
     try {
@@ -94,6 +98,8 @@ function RegisterForm() {
       const { message, ...rest } = data;
       setTimeout(() => {
         dispatch({ type: "LOGIN", payload: rest });
+        Cookies.set("user", JSON.stringify(rest));
+        navigate("/");
       }, 2000);
     } catch (error) {
       setLoading(false);
