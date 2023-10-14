@@ -11,6 +11,9 @@
 - HomePage Style
   ![SRC](https://raw.githubusercontent.com/shpetimaliu/facebook-clone/master/frontend/screenshot/Screenshot%202023-10-12%20at%201.05.56%E2%80%AFAM.png)
 
+- SearchMenu
+  ![SRC](https://raw.githubusercontent.com/shpetimaliu/facebook-clone/master/frontend/screenshot/searchMenu.gif)
+
 # 🇦🇱
 
 - Ky projekt i cili ka si qëllim krijimin e një kopje të Facebook me të gjitha funksionalitetet kryesore të platformës Facebook. Gjatë kohës së lirë, kam vendosur të filloj këtë projekt me synimin për të zhvilluar një aplikacion të përbashkët me karakteristika të ngjashme me Facebook.
