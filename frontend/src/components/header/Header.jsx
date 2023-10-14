@@ -15,6 +15,7 @@ import {
   Watch,
 } from "../../svg";
 import "./Header.css";
+import MegaMenu from "./MegaMenu";
 import SearchMenu from "./SearchMenu";
 export default function Header() {
   const { user } = useSelector((user) => ({ ...user }));
@@ -74,6 +75,7 @@ export default function Header() {
         </Link>
         <div className="circle_icon hover1">
           <Menu />
+          <MegaMenu />
         </div>
         <div className="circle_icon hover1">
           <Messenger />
