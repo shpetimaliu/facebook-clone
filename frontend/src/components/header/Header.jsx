@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -19,26 +20,34 @@ export default function Header() {
   const { user } = useSelector((user) => ({ ...user }));
   const color = "#65676b";
 
+  const [showSearchMenu, setShowSearchMenu] = useState(false);
+
   return (
     <header>
       <div className="header_left">
-        <div style={{ display: "none" }}>
-          <Link to="/" className="header_logo">
-            <div className="circle">
-              <Logo />
-            </div>
-          </Link>
-          <div className="search search1">
-            <Search color={color} />
-            <input
-              type="text"
-              placeholder="Search Facebook"
-              className="hide_input"
-            />
+        <Link to="/" className="header_logo">
+          <div className="circle">
+            <Logo />
           </div>
+        </Link>
+        <div
+          className="search search1"
+          onClick={() => {
+            setShowSearchMenu(true);
+          }}
+        >
+          <Search color={color} />
+          <input
+            type="text"
+            placeholder="Search Facebook"
+            className="hide_input"
+          />
         </div>
       </div>
-      <SearchMenu color={color} />
+
+      {showSearchMenu && (
+        <SearchMenu color={color} setShowSearchMenu={setShowSearchMenu} />
+      )}
       <div className="header_middle">
         <Link to="/" className="middle_icon active">
           <HomeActive />
