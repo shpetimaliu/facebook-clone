@@ -78,7 +78,7 @@ export const menu = [
       "Check your local forecast and sign up for daily weather notifications.",
   },
   {
-    name: "Ads",
+    name: "Ads Menager",
     icon: "ads",
     description: "Create, manage and track the performance of your ads.",
   },
@@ -93,6 +93,11 @@ export const menu = [
     description: "Learn about climate change and its effects.",
   },
   {
+    name: "Fundraisers",
+    icon: "fundraisers",
+    description: "Donate and raise money for nonprofits and personal causes.",
+  },
+  {
     name: "COVID-19 Information Center",
     icon: "covid",
     description:
@@ -103,11 +108,6 @@ export const menu = [
     icon: "community",
     description:
       "Get involved in your community by creating a drive, requesting or offering help or volunteering.",
-  },
-  {
-    name: "Fundraisers",
-    icon: "fundraisers",
-    description: "Donate and raise money for nonprofits and personal causes.",
   },
   {
     name: "Messenger",

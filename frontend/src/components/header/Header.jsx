@@ -22,6 +22,7 @@ export default function Header() {
   const color = "#65676b";
 
   const [showSearchMenu, setShowSearchMenu] = useState(false);
+  const [showMegaMenu, setShowMegaMenu] = useState(false);
 
   return (
     <header>
