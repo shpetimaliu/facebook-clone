@@ -1,18 +1,20 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Header from "../../components/header/Header";
 import useClickOutside from "../../helpers/clickOutside";
 import "./Home.css";
 
 function Home() {
+  const [visible, setVisible] = useState(true);
   const el = useRef(null);
   useClickOutside(el, () => {
-    el.current.style.display = "none";
+    setVisible(false);
+    console.log("You clicked outside");
   });
 
   return (
     <div>
       <Header />
-      <div className="card" ref={el}></div>
+      {visible && <div className="card" ref={el}></div>}
     </div>
   );
 }

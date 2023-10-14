@@ -14,6 +14,7 @@ import {
   Watch,
 } from "../../svg";
 import "./Header.css";
+import SearchMenu from "./SearchMenu";
 export default function Header() {
   const { user } = useSelector((user) => ({ ...user }));
   const color = "#65676b";
@@ -21,21 +22,23 @@ export default function Header() {
   return (
     <header>
       <div className="header_left">
-        <Link to="/" className="header_logo">
-          <div className="circle">
-            <Logo />
+        <div style={{ display: "none" }}>
+          <Link to="/" className="header_logo">
+            <div className="circle">
+              <Logo />
+            </div>
+          </Link>
+          <div className="search search1">
+            <Search color={color} />
+            <input
+              type="text"
+              placeholder="Search Facebook"
+              className="hide_input"
+            />
           </div>
-        </Link>
-        <div className="search search1">
-          <Search color={color} />
-          <input
-            type="text"
-            placeholder="Search Facebook"
-            className="hide_input"
-          />
         </div>
       </div>
-
+      <SearchMenu color={color} />
       <div className="header_middle">
         <Link to="/" className="middle_icon active">
           <HomeActive />
