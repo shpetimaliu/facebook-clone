@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import useClickOutside from "../../helpers/clickOutside";
 import {
   ArrowDown,
   Friends,
@@ -23,6 +24,10 @@ export default function Header() {
 
   const [showSearchMenu, setShowSearchMenu] = useState(false);
   const [showMegaMenu, setShowMegaMenu] = useState(false);
+  const megamenu = useRef(null);
+  useClickOutside(megamenu, () => {
+    setShowMegaMenu(false);
+  });
 
   return (
     <header>
@@ -74,9 +79,15 @@ export default function Header() {
           <img src={user?.profili} alt="" />
           <span>{user?.emri}</span>
         </Link>
-        <div className="circle_icon hover1">
+        <div
+          className="circle_icon hover1"
+          ref={megamenu}
+          onClick={() => {
+            setShowMegaMenu((prev) => !prev);
+          }}
+        >
           <Menu />
-          <MegaMenu />
+          {showMegaMenu && <MegaMenu />}
         </div>
         <div className="circle_icon hover1">
           <Messenger />
