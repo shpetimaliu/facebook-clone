@@ -1,4 +1,6 @@
 import React from "react";
+import { menu } from "../../data/MegaMenu";
+import MegaMenuList from "./MegaMenuList";
 
 function MegaMenu() {
   return (
@@ -12,15 +14,13 @@ function MegaMenu() {
           </div>
           <div className="mega_menu_group">
             <div className="mega_menu_group_header">Social</div>
-            <div className="mega_menu_item hover1">
-              <img src="../../left/campus.png" alt="Campus" />
-              <div className="mega_menu_col">
-                <span>Campus</span>
-                <span>
-                  A unique, exclusive space for college students on Facebook
-                </span>
-              </div>
-            </div>
+            {menu.map((item, i) => (
+              <MegaMenuList
+                name={item.name}
+                description={item.description}
+                icon={item.icon}
+              />
+            ))}
           </div>
         </div>
       </div>
