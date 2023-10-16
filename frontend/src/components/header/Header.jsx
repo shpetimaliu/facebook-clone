@@ -18,6 +18,7 @@ import {
 import "./Header.css";
 import MegaMenu from "./MegaMenu";
 import SearchMenu from "./SearchMenu";
+import UserMenu from "./UserMenu";
 export default function Header() {
   const { user } = useSelector((user) => ({ ...user }));
   const color = "#65676b";
@@ -98,6 +99,7 @@ export default function Header() {
         </div>
         <div className="circle_icon hover1">
           <ArrowDown />
+          <UserMenu user={user} />
         </div>
       </div>
     </header>
