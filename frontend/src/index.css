@@ -93,6 +93,10 @@ a {
   background: var(--bg-third);
 }
 
+.hover3:hover {
+  background: #d4d6da3a;
+}
+
 .card {
   height: 500px;
   width: 500px;
@@ -109,3 +113,110 @@ a {
   border-radius: 5px;
 }
 /* Scrollbar */
+
+/* Circle */
+
+.small_circle {
+  position: relative;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 11px;
+  background: var(--bg-third);
+  cursor: pointer;
+}
+
+/* Circle */
+
+/* UserMenu */
+
+.userMenu {
+  padding: 0 0.3rem;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 350px;
+  border-radius: 10px;
+  background: var(--bg-primary);
+  box-shadow: 2px 2px 2px var(--shadow-1);
+  user-select: none;
+  padding: 10px;
+}
+
+.userMenu_header {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+.userMenu_header img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userMenu_col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.userMenu_col span:first-of-type {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1;
+}
+
+.userMenu_col span:last-of-type {
+  font-size: 14px;
+}
+
+.userMenu_main {
+  padding: 10px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.userMenu_splitter {
+  width: 100%;
+  height: 1px;
+  background: var(--bg-third);
+  margin-top: 5px;
+}
+
+.userMenu_span1 {
+  font-size: 14px !important;
+}
+
+.userMenu_span2 {
+  font-size: 12px !important;
+  color: var(--color-secondary);
+}
+
+.userMenu_item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  padding: 7px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.rArrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* UserMenu */

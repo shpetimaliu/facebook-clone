@@ -16,7 +16,7 @@ function UserMenu({ user }) {
 
       <div className="userMenu_splitter"></div>
       <div className="userMenu_main hover3">
-        <div className="circle_icon">
+        <div className="small_circle">
           <i className="report_filled_icon"></i>
         </div>
         <div className="userMenu_col2">
@@ -24,10 +24,23 @@ function UserMenu({ user }) {
           <div className="userMenu_span2">Help us improve facebook</div>
         </div>
       </div>
-      <div className="userMenu_splitter1"></div>
+      <div className="userMenu_splitter"></div>
       <div className="userMenu_item hover3">
-        <div className="circle_icon">
-          <div className="setting_filled_icon"></div>
+        <div className="small_circle">
+          <i className="settings_filled_icon"></i>
+        </div>
+        <span>Settings & Privacy</span>
+        <div className="rArrow">
+          <i className="right_icon"></i>
+        </div>
+      </div>
+      <div className="userMenu_item hover3">
+        <div className="small_circle">
+          <i className="settings_filled_icon"></i>
+        </div>
+        <span>Settings & Privacy</span>
+        <div className="rArrow">
+          <i className="right_icon"></i>
         </div>
       </div>
     </div>
