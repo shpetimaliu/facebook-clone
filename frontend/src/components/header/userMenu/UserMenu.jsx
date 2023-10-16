@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import DisplayAccessibility from "./DisplayAccessibility";
+import HelpSupport from "./HelpSupport";
 import SettingPrivacy from "./SettingPrivacy";
 
 function UserMenu({ user }) {
-  const [visible, setVisible] = useState(1);
+  const [visible, setVisible] = useState(3);
 
   return (
     <div className="userMenu">
@@ -30,7 +32,12 @@ function UserMenu({ user }) {
             </div>
           </div>
           <div className="userMenu_splitter"></div>
-          <div className="userMenu_item hover3">
+          <div
+            className="userMenu_item hover3"
+            onClick={() => {
+              setVisible(1);
+            }}
+          >
             <div className="small_circle">
               <i className="settings_filled_icon"></i>
             </div>
@@ -39,7 +46,12 @@ function UserMenu({ user }) {
               <i className="right_icon"></i>
             </div>
           </div>
-          <div className="userMenu_item hover3">
+          <div
+            className="userMenu_item hover3"
+            onClick={() => {
+              setVisible(2);
+            }}
+          >
             <div className="small_circle">
               <i className="help_filled_icon"></i>
             </div>
@@ -65,7 +77,9 @@ function UserMenu({ user }) {
           </div>
         </div>
       )}
-      {visible === 1 && <SettingPrivacy />}
+      {visible === 1 && <SettingPrivacy setVisible={setVisible} />}
+      {visible === 2 && <HelpSupport setVisible={setVisible} />}
+      {visible === 3 && <DisplayAccessibility setVisible={setVisible} />}
     </div>
   );
 }
