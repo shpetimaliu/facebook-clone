@@ -15,7 +15,7 @@ function DisplayAccessibility({ setVisible }) {
         Display Accessibility
       </div>
       <div className="userMenu_main">
-        <div className="small_circle">
+        <div className="small_circle" style={{ width: "60px" }}>
           <i className="dark_filled_icon"></i>
         </div>
         <div className="userMenu_col">
@@ -35,7 +35,7 @@ function DisplayAccessibility({ setVisible }) {
         <input type="radio" name="dark" id="darkOn" />
       </label>
       <div className="userMenu_main">
-        <div className="small_circle">
+        <div className="small_circle" style={{ width: "50px" }}>
           <i className="compact_icon"></i>
         </div>
         <div className="userMenu_col">
