@@ -18,7 +18,7 @@ import {
 import "./Header.css";
 import MegaMenu from "./MegaMenu";
 import SearchMenu from "./SearchMenu";
-import UserMenu from "./UserMenu";
+import UserMenu from "./userMenu/UserMenu";
 export default function Header() {
   const { user } = useSelector((user) => ({ ...user }));
   const color = "#65676b";
