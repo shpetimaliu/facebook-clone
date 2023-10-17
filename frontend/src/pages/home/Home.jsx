@@ -1,21 +1,15 @@
-import React, { useRef, useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import Header from "../../components/header/Header";
 import LeftSide from "../../components/home/left/LeftSide";
-import useClickOutside from "../../helpers/clickOutside";
 import "./Home.css";
 
 function Home() {
-  const [visible, setVisible] = useState(true);
-  const el = useRef(null);
-  useClickOutside(el, () => {
-    setVisible(false);
-    console.log("You clicked outside");
-  });
-
+  const { user } = useSelector((user) => ({ ...user }));
   return (
     <div>
       <Header />
-      <LeftSide />
+      <LeftSide user={user} />
     </div>
   );
 }
