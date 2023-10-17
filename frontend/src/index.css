@@ -264,3 +264,23 @@ a {
   height: 20px;
 }
 /* UserMenu */
+
+/* Responsive */
+
+@media (max-width: 1295px) {
+  .middle_icon {
+    width: 90px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .middle_icon {
+    width: 70px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .middle_icon {
+    width: 70px;
+  }
+}
