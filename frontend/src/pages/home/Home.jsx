@@ -4,6 +4,7 @@ import Header from "../../components/header/Header";
 import LeftSide from "../../components/home/left/LeftSide";
 import RightSide from "../../components/home/right/RightSide";
 import Stories from "../../components/home/stories/Stories";
+import CreatePost from "../../components/post/CreatePost";
 import "./Home.css";
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
       <LeftSide user={user} />
       <div className="homeMiddle">
         <Stories />
+        <CreatePost user={user} />
       </div>
       <RightSide user={user} />
     </div>
