@@ -2,7 +2,7 @@ import React from "react";
 
 function LeftLink({ img, text, notify }) {
   return (
-    <div className="left_link">
+    <div className="leftLink hover1">
       <img src={`../../../left/${img}.png`} alt="" />
       {notify !== undefined ? (
         <div className="col">

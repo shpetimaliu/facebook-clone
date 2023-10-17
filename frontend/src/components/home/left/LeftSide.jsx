@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { left } from "../../../data/home";
 import LeftLink from "./LeftLink";
 import "./LeftSide.css";
@@ -6,12 +7,12 @@ import "./LeftSide.css";
 function LeftSide({ user }) {
   return (
     <div className="leftSide">
-      <div className="leftLink">
+      <Link to="/profile" className="leftLink hover1">
         <img src={user?.profili} alt="" />
         <span>
           {user?.emri} {user?.mbiemri}
         </span>
-      </div>
+      </Link>
       {left.slice(0, 8).map((link, i) => (
         <LeftLink
           key={i}
