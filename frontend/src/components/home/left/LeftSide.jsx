@@ -4,6 +4,7 @@ import { left } from "../../../data/home";
 import { ArrowDown1 } from "../../../svg";
 import LeftLink from "./LeftLink";
 import "./LeftSide.css";
+import Shortcut from "./Shortcut";
 
 function LeftSide({ user }) {
   const [visible, setVisible] = useState(false);
@@ -61,14 +62,42 @@ function LeftSide({ user }) {
           </div>
         </div>
       )}
-      <div className="splitter">
-        <div className="shortcut">
-          <div className="heading">Your Shortcut</div>
-          <div className="edit">Edit</div>
-        </div>
-        <div className="shortcut_link">
-          <img src="" alt="" />
-        </div>
+
+      <div className="splitter"></div>
+      <div className="shortcut">
+        <div className="heading">Your Shortcut</div>
+        <div className="edit">Edit</div>
+      </div>
+      <div className="shortcut_link">
+        <Shortcut
+          link="https://www.github.com/shpetimaliu"
+          img="../../images/github.png"
+          name="Github"
+        />
+        <Shortcut
+          link="https://codepen.io/shpetimaliu/"
+          img="../../images/codepen_animation.gif"
+          name="CodePen"
+        />
+      </div>
+      <div className={`fb_copyright ${visible && "relative_fb_copyright"}`}>
+        <Link to="/">Privacy</Link>
+        <span> · </span>
+        <Link to="/">Terms</Link>
+        <span> · </span>
+        <Link to="/">Advertising</Link>
+        <span> · </span>
+        <br />
+        <Link to="/">
+          Ad Choices <i className="adChoices_icon"></i>
+        </Link>
+        <span> · </span>
+        <Link to="/">Cookies</Link>
+        <span> · </span>
+        <Link to="/">More</Link>
+        <span> · </span>
+        <br />
+        <Link to="/">Meta © 2023 - Cloned by Shpetim Aliu</Link>
       </div>
     </div>
   );

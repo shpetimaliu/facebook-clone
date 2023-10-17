@@ -8,6 +8,7 @@
   color: var(--color-primary);
   padding: 15px 0;
   padding-bottom: 5rem;
+  user-select: none;
 }
 
 .leftLink {
@@ -95,4 +96,40 @@
 
 .shortcut:hover .edit {
   display: block;
+}
+
+.shortcut_item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.shortcut_item img {
+  width: 36px;
+  height: 36px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.shortcut_item span {
+  margin-bottom: 3px;
+}
+
+.fb_copyright {
+  position: fixed;
+  bottom: 14px;
+  left: 10px;
+  font-size: 12px;
+  color: var(--color-secondary);
+}
+
+.relative_fb_copyright {
+  position: relative;
+  width: 99%;
+  margin-top: 5rem;
 }
