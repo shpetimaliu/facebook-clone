@@ -88,7 +88,7 @@ export default function Header() {
           <span>{user?.emri}</span>
         </Link>
         <div
-          className="circle_icon hover1"
+          className={`circle_icon hover1 ${showMegaMenu && "active_header"}`}
           ref={megamenu}
           onClick={() => {
             setShowMegaMenu((prev) => !prev);
@@ -104,7 +104,10 @@ export default function Header() {
           <Notifications />
           <div className="right_notification">5</div>
         </div>
-        <div className="circle_icon hover1" ref={usermenu}>
+        <div
+          className={`circle_icon hover1 ${showUserMenu && "active_header"}`}
+          ref={usermenu}
+        >
           <div
             onClick={() => {
               setShowUserMenu((prev) => !prev);

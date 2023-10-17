@@ -388,16 +388,12 @@ a {
   }
 }
 
-@media (max-width: 370px) {
-  .header_right .circle_icon:nth-child(3) {
-    display: none;
-  }
+/*  */
 
-  .userMenu {
-    width: 340px;
-  }
+.active_header {
+  background: var(--light-blue-color);
+}
 
-  .mega_menu {
-    left: -1rem;
-  }
+.active_header svg {
+  fill: var(--blue-color);
 }

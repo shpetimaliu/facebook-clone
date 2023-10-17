@@ -28,7 +28,7 @@ function DisplayAccessibility({ setVisible }) {
       </div>
       <label htmlFor="darkOff" className="hover1">
         <span>Off</span>
-        <input type="radio" name="dark" id="darkOff" />
+        <input type="radio" name="dark" id="darkOff" checked />
       </label>
       <label htmlFor="darkOn" className="hover1">
         <span>On</span>
@@ -47,7 +47,7 @@ function DisplayAccessibility({ setVisible }) {
       </div>
       <label htmlFor="compactOff" className="hover1">
         <span>Off</span>
-        <input type="radio" name="compact" id="compactOff" />
+        <input type="radio" name="compact" id="compactOff" checked />
       </label>
       <label htmlFor="compactOn" className="hover1">
         <span>On</span>
