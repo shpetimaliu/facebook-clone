@@ -94,7 +94,9 @@ export default function Header() {
             setShowMegaMenu((prev) => !prev);
           }}
         >
-          <Menu />
+          <div style={{ transform: "translateY(2px)" }}>
+            <Menu />
+          </div>
           {showMegaMenu && <MegaMenu />}
         </div>
         <div className="circle_icon hover1">
@@ -113,7 +115,9 @@ export default function Header() {
               setShowUserMenu((prev) => !prev);
             }}
           >
-            <ArrowDown />
+            <div style={{ transform: "translateY(2px)" }}>
+              <ArrowDown />
+            </div>
           </div>
           {showUserMenu && <UserMenu user={user} />}
         </div>
