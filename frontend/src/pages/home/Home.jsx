@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Header from "../../components/header/Header";
+import LeftSide from "../../components/home/left/LeftSide";
 import useClickOutside from "../../helpers/clickOutside";
 import "./Home.css";
 
@@ -14,7 +15,7 @@ function Home() {
   return (
     <div>
       <Header />
-      {visible && <div className="card" ref={el}></div>}
+      <LeftSide />
     </div>
   );
 }
