@@ -17,6 +17,9 @@
 - UserMenu
   ![SRC](https://raw.githubusercontent.com/shpetimaliu/facebook-clone/master/frontend/screenshot/userMedia.gif)
 
+- Left Menu
+  ![SRC](https://github.com/shpetimaliu/facebook-clone/blob/master/frontend/screenshot/Screenshot%202023-10-17%20at%205.13.03%E2%80%AFPM.png?raw=true)
+
 # 🇦🇱
 
 - Ky projekt i cili ka si qëllim krijimin e një kopje të Facebook me të gjitha funksionalitetet kryesore të platformës Facebook. Gjatë kohës së lirë, kam vendosur të filloj këtë projekt me synimin për të zhvilluar një aplikacion të përbashkët me karakteristika të ngjashme me Facebook.
