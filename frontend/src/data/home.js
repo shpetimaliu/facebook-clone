@@ -110,3 +110,31 @@ export const left = [
     img: "weather",
   },
 ];
+
+export const stories = [
+  {
+    foto_profilit: "../../stories/profili1.jpg",
+    emri_profilit: "Shpetim Aliu",
+    image: "../../stories/profili1.jpg",
+  },
+  {
+    foto_profilit: "../../stories/profile3.png",
+    emri_profilit: "Sopranos",
+    image: "../../stories/3.jpg",
+  },
+  {
+    foto_profilit: "../../stories/ElonMusk.webp",
+    emri_profilit: "Elon Musk",
+    image: "../../stories/ElonStories.webp",
+  },
+  {
+    foto_profilit: "../../stories/Mark.webp",
+    emri_profilit: "Mark Zuckerberg",
+    image: "../../stories/MarkStories.webp",
+  },
+  {
+    foto_profilit: "../../stories/WalterWhite.webp",
+    emri_profilit: "Walter White",
+    image: "../../stories/walterStories.webp",
+  },
+];

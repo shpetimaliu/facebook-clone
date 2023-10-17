@@ -6,7 +6,7 @@ function Shortcut({ img, link, name }) {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="shortcut_item hover1"
+      className="shortcut_item hover3"
     >
       <img src={img} alt="img" />
       <span>{name}</span>
