@@ -1,10 +1,17 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 import { stories } from "../../../data/home";
 import { ArrowRight, Plus } from "../../../svg";
 import "./Stories.css";
 import Story from "./Story";
 
 function Stories() {
+  const query1175px = useMediaQuery({
+    query: "(max-width: 1175px)",
+  });
+
+  const max = query1175px ? 4 : stories.length;
+
   return (
     <div className="stories">
       <div className="create_story_card">
@@ -14,7 +21,7 @@ function Stories() {
         </div>
         <div className="story_create_text">Create Story</div>
       </div>
-      {stories.map((story, i) => (
+      {stories.slice(0, max).map((story, i) => (
         <Story story={story} key={i} />
       ))}
       <div className="white_circle">

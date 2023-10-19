@@ -7,5 +7,14 @@
 
 .homeMiddle {
   margin-top: 75px;
-  margin-left: 31.7vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 1175px) {
+  .stories,
+  .createPost {
+    width: 85px;
+  }
 }
