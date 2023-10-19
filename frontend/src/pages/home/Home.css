@@ -32,7 +32,8 @@
   .leftSide .leftLink .col,
   .shortcut,
   .shortcut_item span,
-  .splitter {
+  .splitter,
+  .fb_copyright {
     display: none;
   }
 
@@ -42,5 +43,32 @@
 
   .leftLink {
     background: var(--bg-third);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
   }
+
+  .homeMiddle {
+    position: relative;
+    margin-left: 55px;
+  }
+
+  .rightSide {
+    width: 20vw;
+  }
+
+  .contacts_header_right {
+    right: 10%;
+  }
+
+  .contact_circle {
+    width: 20px;
+  }
+}
+
+.stories,
+.createPost {
+  width: 100%;
 }
