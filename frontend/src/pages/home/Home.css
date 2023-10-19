@@ -15,6 +15,32 @@
 @media (max-width: 1175px) {
   .stories,
   .createPost {
-    width: 85px;
+    width: 84%;
+  }
+
+  .homeMiddle {
+    margin-left: 5%;
+  }
+
+  .rightSide {
+    width: 18vw;
+  }
+}
+
+@media (max-width: 1030px) {
+  .leftSide .leftLink span,
+  .leftSide .leftLink .col,
+  .shortcut,
+  .shortcut_item span,
+  .splitter {
+    display: none;
+  }
+
+  .leftSide {
+    width: 70px;
+  }
+
+  .leftLink {
+    background: var(--bg-third);
   }
 }
