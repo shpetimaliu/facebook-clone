@@ -66,9 +66,49 @@
   .contact_circle {
     width: 20px;
   }
+  .stories,
+  .createPost {
+    width: 100%;
+  }
 }
 
-.stories,
-.createPost {
-  width: 100%;
+@media (max-width: 960px) {
+  .createPost {
+    width: 93%;
+  }
+
+  .stories {
+    width: 95%;
+  }
+
+  .homeMiddle {
+    margin-left: 10%;
+  }
+
+  .rightSide {
+    left: 78%;
+    width: 20vw;
+  }
+
+  .splitter {
+    width: 20vw;
+  }
+
+  .contact_circle {
+    width: 30px;
+  }
+
+  .contacts_header_right {
+    right: 0;
+  }
+}
+
+@media (max-width: 885px) {
+  .rightSide {
+    display: none;
+  }
+
+  .createPost {
+    width: 110%;
+  }
 }
