@@ -12,15 +12,17 @@ function Activate() {
   const { user } = useSelector((user) => ({ ...user }));
   const [success, setSuccess] = useState("");
   const [failed, setFailed] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   return (
     <div className="home">
-      <ActivateForm
-        type="success"
-        header="Account verification successfully"
-        text={success}
-        loading={loading}
-      />
+      {success && (
+        <ActivateForm
+          type="success"
+          header="Account verification successfully"
+          text={success}
+          loading={loading}
+        />
+      )}
       <Header />
       <LeftSide user={user} />
       <div className="homeMiddle">
