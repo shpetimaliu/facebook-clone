@@ -138,3 +138,7 @@ exports.login = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+exports.auth = async (req, res) => {
+  res.send("Hi form auth");
+};
