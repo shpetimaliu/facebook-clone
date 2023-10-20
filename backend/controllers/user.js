@@ -140,5 +140,6 @@ exports.login = async (req, res) => {
 };
 
 exports.auth = async (req, res) => {
-  res.send("Hi form auth");
+  console.log(req.user);
+  res.send("Authh hello");
 };
