@@ -111,4 +111,81 @@
   .createPost {
     width: 110%;
   }
+
+  .stories {
+    width: 113%;
+  }
+
+  .homeMiddle {
+    margin-left: 9%;
+  }
+}
+
+@media (max-width: 805px) {
+  .stories {
+    grid-template-columns: repeat(6, 13vw);
+  }
+
+  .story_emri_profilit,
+  .story_create_text {
+    display: none;
+  }
+
+  .create_story_card {
+    filter: brightness(96%);
+  }
+
+  .stories .white_circle {
+    right: 5px;
+  }
+
+  .story_foto_profilit {
+    width: 7vw;
+    height: 7vw;
+  }
+
+  .leftSide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .leftSide {
+    display: none;
+  }
+
+  .homeMiddle {
+    position: absolute;
+    margin-left: 0;
+  }
+
+  .stories,
+  .createPost {
+    width: 100%;
+  }
+
+  .stories .white_circle {
+    display: none;
+  }
+
+  .stories {
+    grid-template-columns: repeat(6, 14vw);
+  }
+
+  .story,
+  .create_story_card {
+    height: 30vw;
+  }
+
+  .createPost_icon {
+    font-size: 12px;
+  }
+
+  .open_post {
+    font-size: 15px;
+  }
+
+  .createPost_icon svg {
+    width: 20px;
+  }
 }
