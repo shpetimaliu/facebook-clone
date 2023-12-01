@@ -1,5 +1,5 @@
 # Facebook Clone
-0x653960da5085b8cb658004fc5398bfd95afd9625
+Not Finished
 - This project, which aims to create a replica of Facebook with all the key functionalities of the Facebook platform. During my free time, I have decided to start this project with the intention of developing a shared application with features similar to Facebook.
 
 - I implemented the sender to send a verification email to the customer who signs up
